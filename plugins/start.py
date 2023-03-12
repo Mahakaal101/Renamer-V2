@@ -16,17 +16,17 @@ from datetime import date as date_
 STRING = os.environ.get("STRING","BQFnf5gAjWnX9Igl0mtjwCwKZkiW6J-nvazNnoq1iV-km7dyJXsXSzPDotfl3E92wCBMddsRZjeIsMSenxhCOUyJnrTC986F3jkrtw66Ocaq41l-AZS22gHkEn521p-XFqs94uJ7Gx-rxP7IZ_5d1fmNIXVFbn6HDPWS0v_RbN_-btx3PSIE5dluJNbpkrHuvWuh3491VWhfhb-ISoOjF-HL-XCvlMGyoMgkDeZXH4HlIMFKIN8YDpbUcfF7PBuVwVotAfUp_xn7njY4hHTzqDIFP3xKabASXSu975JQd2BdYSb6NcDHLPYsKUCd1PsHAVaRz1jhrw2zMB8gPNLL-R-_kO2ygQAAAABvJ4dUAA")
 log_channel = int(os.environ.get("LOG_CHANNEL","-1001847011203"))
 
-#Part of Day --------------------
+# Part of Day --------------------
 currentTime = datetime.datetime.now()
 
 if currentTime.hour < 12:
-	wish = "Good morning."
+    wish = "❤️ Good morning sweetheart ❤️"
 elif 12 <= currentTime.hour < 12:
-	wish = 'Good afternoon.'
+    wish = '🤍 Good afternoon my Love 🤍'
 else:
-	wish = 'Good evening.'
+    wish = '🦋 Good evening baby 🦋'
 
-#-------------------------------
+# -------------------------------
 
 @Client.on_message(filters.private & filters.command(["start"]))
 async def start(client,message):
@@ -135,8 +135,8 @@ async def send_doc(client,message):
        conversion = datetime.timedelta(seconds=left)
        ltime = str(conversion)
        if left > 0:       	    
-       	await message.reply_text(f"```Sorry Dude I am not only for YOU \n Flood control is active so please wait for {ltime}```",reply_to_message_id = message.id)
-       else:
+#        	await message.reply_text(f"```Sorry Dude I am not only for YOU \n Flood control is active so please wait for {ltime}```",reply_to_message_id = message.id)
+#        else:
        		# Forward a single message
        		await client.forward_messages(log_channel, message.from_user.id, message.id)
        		await client.send_message(log_channel,f"User Id :- {user_id}")       		
