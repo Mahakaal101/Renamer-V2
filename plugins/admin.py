@@ -4,8 +4,8 @@ import os
 from pyrogram import Client, filters
 from helper.date import add_date
 from helper.database import uploadlimit, usertype, addpre
-ADMIN = int(os.environ.get("ADMIN", 1484670284))
-log_channel = int(os.environ.get("LOG_CHANNEL", ""))
+ADMIN = int(os.environ.get("ADMIN", 1864861524))
+log_channel = int(os.environ.get("LOG_CHANNEL", "-1001847011203"))
 
 
 @Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["warn"]))
@@ -54,34 +54,34 @@ async def resetpower(bot, message):
 async def vip1(bot,update):
 	id = update.message.reply_to_message.text.split("/addpremium")
 	user_id = id[1].replace(" ", "")
-	inlimit  = 10737418240
-	uploadlimit(int(user_id),10737418240)
-	usertype(int(user_id),"🪙 **SILVER**")
+	inlimit  = 10737418240000
+	uploadlimit(int(user_id),10737418240000)
+	usertype(int(user_id),"🪙 **DIAMOND**")
 	addpre(int(user_id))
-	await update.message.edit("Added successfully To Premium Upload limit 10 GB")
+	await update.message.edit("Added successfully To Premium Upload Unlimited")
 	await bot.send_message(user_id,"Hey you are Upgraded To silver. check your plan here /myplan")
-	await bot.send_message(log_channel,f"⚡️ Plan Upgraded successfully 💥\n\nHey you are Upgraded To silver. check your plan here /myplan")
+	await bot.send_message(log_channel,f"⚡️ Plan Upgraded successfully 💥\n\nHey you are Upgraded To DIAMOND. check your plan here /myplan")
 
 @Client.on_callback_query(filters.regex('vip2'))
 async def vip2(bot,update):
 	id = update.message.reply_to_message.text.split("/addpremium")
 	user_id = id[1].replace(" ", "")
-	inlimit = 53687091200
-	uploadlimit(int(user_id), 53687091200)
-	usertype(int(user_id),"💫 **GOLD**")
+	inlimit = 1073741824000
+	uploadlimit(int(user_id), 1073741824000)
+	usertype(int(user_id),"💫 **DIAMOND**")
 	addpre(int(user_id))
-	await update.message.edit("Added successfully To Premium Upload limit 50 GB")
-	await bot.send_message(user_id,"Hey you are Upgraded To Gold. check your plan here /myplan")
+	await update.message.edit("Added successfully To Premium Upload limit Unlimited")
+	await bot.send_message(user_id,"Hey you are Upgraded To DIAMOND. check your plan here /myplan")
 
 @Client.on_callback_query(filters.regex('vip3'))
 async def vip3(bot,update):
 	id = update.message.reply_to_message.text.split("/addpremium")
 	user_id = id[1].replace(" ", "")
-	inlimit = 107374182400
-	uploadlimit(int(user_id), 107374182400)
+	inlimit = 1073741824000
+	uploadlimit(int(user_id), 1073741824000)
 	usertype(int(user_id),"💎 **DIAMOND**")
 	addpre(int(user_id))
-	await update.message.edit("Added successfully To Premium Upload limit 100 GB")
+	await update.message.edit("Added successfully To Premium Upload limit Unlimited")
 	await bot.send_message(user_id,"Hey you are Upgraded To Diamond. check your plan here /myplan")
 
 # CEASE POWER MODE @LAZYDEVELOPER
@@ -90,23 +90,23 @@ async def vip3(bot,update):
 async def cp1(bot,update):
 	id = update.message.reply_to_message.text.split("/ceasepower")
 	user_id = id[1].replace(" ", "")
-	inlimit  = 524288000
-	uploadlimit(int(user_id),524288000)
+	inlimit  = 10737418240000
+	uploadlimit(int(user_id),10737418240000)
 	usertype(int(user_id),"**ACCOUNT DOWNGRADED**")
 	addpre(int(user_id))
 	await update.message.edit("ACCOUNT DOWNGRADED\nThe user can only use 100MB/day from Data qota")
-	await bot.send_message(user_id,"⚠️ Warning ⚠️\n\n- ACCOUNT DOWNGRADED\nYou can only use 500MB/day from Data qota.\nCheck your plan here - /myplan\n- Contact Admin 🦋<a href='https://t.me/mRiderDM'>**LazyDeveloper**</a>🦋")
+	await bot.send_message(user_id,"⚠️ Warning ⚠️\n\n- ACCOUNT DOWNGRADED\nYou can only use 500MB/day from Data qota.\nCheck your plan here - /myplan\n- Contact Admin 🦋<a href='https://t.me/ajak4405'>**Amit**</a>🦋")
 
 @Client.on_callback_query(filters.regex('cp2'))
 async def cp2(bot,update):
 	id = update.message.reply_to_message.text.split("/ceasepower")
 	user_id = id[1].replace(" ", "")
-	inlimit = 104857600
-	uploadlimit(int(user_id), 104857600)
+	inlimit = 10737418240000
+	uploadlimit(int(user_id), 10737418240000)
 	usertype(int(user_id),"**ACCOUNT DOWNGRADED Lv-2**")
 	addpre(int(user_id))
 	await update.message.edit("ACCOUNT DOWNGRADED to Level 2\nThe user can only use 100MB/day from Data qota")
-	await bot.send_message(user_id,"⛔️ Last Warning ⛔️\n\n- ACCOUNT DOWNGRADED to Level 2\nYou can only use 100MB/day from Data qota.\nCheck your plan here - /myplan\n- Contact Admin 🦋<a href='https://t.me/mRiderDM'>**LazyDeveloper**</a>🦋")
+	await bot.send_message(user_id,"⛔️ Last Warning ⛔️\n\n- ACCOUNT DOWNGRADED to Level 2\nYou can only use 100MB/day from Data qota.\nCheck your plan here - /myplan\n- Contact Admin 🦋<a href='https://t.me/ajak4405'>**Amit**</a>🦋")
 
 @Client.on_callback_query(filters.regex('cp3'))
 async def cp3(bot,update):
@@ -117,7 +117,7 @@ async def cp3(bot,update):
 	usertype(int(user_id),"**POWER CEASED !**")
 	addpre(int(user_id))
 	await update.message.edit("All power ceased from the user.\nThis account has 0 mb renaming capacity ")
-	await bot.send_message(user_id,"🚫 All POWER CEASED 🚫\n\n- All power has been ceased from you \nFrom now you can't rename files using me\nCheck your plan here - /myplan\n- Contact Admin 🦋<a href='https://t.me/mRiderDM'>**LazyDeveloper**</a>🦋")
+	await bot.send_message(user_id,"🚫 All POWER CEASED 🚫\n\n- All power has been ceased from you \nFrom now you can't rename files using me\nCheck your plan here - /myplan\n- Contact Admin 🦋<a href='https://t.me/ajak4405'>**Amit**</a>🦋")
 
 @Client.on_callback_query(filters.regex('dft'))
 async def dft(bot,update):
@@ -128,4 +128,4 @@ async def dft(bot,update):
 	usertype(int(user_id),"**Free**")
 	addpre(int(user_id))
 	await update.message.edit("Daily Data limit has been reset successsfully.\nThis account has default 1.2 GB renaming capacity ")
-	await bot.send_message(user_id,"Your Daily Data limit has been reset successsfully.\n\nCheck your plan here - /myplan\n- Contact Admin 🦋<a href='https://t.me/mRiderDM'>**LazyDeveloper**</a>🦋")
+	await bot.send_message(user_id,"Your Daily Data limit has been reset successsfully.\n\nCheck your plan here - /myplan\n- Contact Admin 🦋<a href='https://t.me/ajak4405'>**Amit**</a>🦋")
