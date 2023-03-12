@@ -16,15 +16,15 @@ from helper.progress import humanbytes
 from helper.set import escape_invalid_curly_brackets
 import os
 
-log_channel = int(os.environ.get("LOG_CHANNEL", ""))
+log_channel = int(os.environ.get("LOG_CHANNEL", "-1001847011203"))
 
-API_ID = int(os.environ.get("API_ID", ""))
+API_ID = int(os.environ.get("API_ID", "23560088"))
 
-API_HASH = os.environ.get("API_HASH", "")
+API_HASH = os.environ.get("API_HASH", "999c01704d5c417749a98f4b8785fe88")
 
 STRING = os.environ.get("STRING", "")
 
-ADMIN = os.environ.get("ADMIN", "")
+ADMIN = os.environ.get("ADMIN", "1864861524")
 
 app = Client("test", api_id=API_ID, api_hash=API_HASH, session_string=STRING)
 
@@ -103,7 +103,7 @@ async def doc(bot, update):
     else:
         ph_path = None
 
-    value = 2090000000
+    value = 2147483648
     if value < file.file_size:
         await ms.edit("```Trying To Upload```")
         try:
@@ -205,7 +205,7 @@ async def vid(bot, update):
             ph_path = None
             print(e)
 
-    value = 2090000000
+    value = 2147483648
     if value < file.file_size:
         await ms.edit("```Trying To Upload```")
         try:
