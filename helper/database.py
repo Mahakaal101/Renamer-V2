@@ -1,8 +1,8 @@
 import pymongo
 import os
 from helper.date import add_date
-DB_NAME = os.environ.get("DB_NAME", "")
-DB_URL = os.environ.get("DB_URL", "")
+DB_NAME = os.environ.get("DB_NAME", "amit")
+DB_URL = os.environ.get("DB_URL", "mongodb+srv://amit:amit@cluster0.l8kek4n.mongodb.net/?retryWrites=true&w=majority")
 mongo = pymongo.MongoClient(DB_URL)
 db = mongo[DB_NAME]
 dbcol = db["user"]
@@ -40,7 +40,7 @@ def total_size(chat_id, total_size, now_file_size):
 def insert(chat_id):
     user_id = int(chat_id)
     user_det = {"_id": user_id, "file_id": None, "caption": None, "daily": 0, "date": 0,
-                "uploadlimit": 1288490188, "used_limit": 0, "usertype": "Free", "prexdate": None}
+                "uploadlimit": 0, "used_limit": 0, "usertype": "Free", "prexdate": None}
     try:
         dbcol.insert_one(user_det)
     except:
