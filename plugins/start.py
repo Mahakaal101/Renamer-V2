@@ -10,11 +10,11 @@ from helper.database import  insert ,find_one,used_limit,usertype,uploadlimit,ad
 from pyrogram.file_id import FileId
 from helper.database import daily as daily_
 from helper.date import add_date ,check_expi
-CHANNEL = os.environ.get('CHANNEL',"")
+CHANNEL = os.environ.get('CHANNEL',"dnsmsmsosmdnd")
 import datetime
 from datetime import date as date_
-STRING = os.environ.get("STRING","BQAelg_pvzw_veEjEpzL0AdWM4H4_VgbSg5q")
-log_channel = int(os.environ.get("LOG_CHANNEL","-1001895067407"))
+STRING = os.environ.get("STRING","")
+log_channel = int(os.environ.get("LOG_CHANNEL","-1001949274353"))
 
 # Part of Day --------------------
 currentTime = datetime.datetime.now()
