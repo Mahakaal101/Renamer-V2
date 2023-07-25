@@ -5,7 +5,7 @@ from pyrogram import Client, filters
 from pyrogram.types import ( InlineKeyboardButton, InlineKeyboardMarkup,ForceReply)
 import humanize
 from helper.progress import humanbytes
-from bot import *
+
 from helper.database import  insert ,find_one,used_limit,usertype,uploadlimit,addpredata
 from pyrogram.file_id import FileId
 from helper.database import daily as daily_
@@ -13,7 +13,7 @@ from helper.date import add_date ,check_expi
 CHANNEL = os.environ.get('CHANNEL',"")
 import datetime
 from datetime import date as date_
-STRING = STRING
+STRING = os.environ.get("STRING", "")
 log_channel = int(os.environ.get("LOG_CHANNEL","-1001953206885"))
 
 # Part of Day --------------------
